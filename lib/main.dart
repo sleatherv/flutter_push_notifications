@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_notifications_app/screens/home_screen.dart';
 import 'package:flutter_notifications_app/screens/message_screen.dart';
+import 'package:flutter_notifications_app/services/push_notifications_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PushNotificationsService.initializeApp();
   runApp(const MyApp());
 }
 
